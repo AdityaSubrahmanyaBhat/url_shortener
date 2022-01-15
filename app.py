@@ -14,7 +14,10 @@ def main():
     col2.title('')
     submitted=col2.button("Submit")
 
-    if submitted:
+    if long_url=='' and submitted:
+        st.warning("URL cannot be empty")
+
+    elif submitted:
         short_url=shorten(long_url)
         col1.title('')
         col1.subheader("Shortened url : ")
